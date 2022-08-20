@@ -5,18 +5,18 @@ pygame.init() # Inicializa nuestro juego
 screen = pygame.display.set_mode((800,400)) # Crea la pantalla del juego
 pygame.display.set_caption("Snail Runner")
 clock = pygame.time.Clock()
-text_font = pygame.font.Font(r"C:\Users\campo\OneDrive\Escritorio\Game\font\Pixeltype.ttf",70)
-bg_music = pygame.mixer.Sound(r"C:\Users\campo\OneDrive\Escritorio\Game\audio\music.wav")
+text_font = pygame.font.Font(r"Game\font\Pixeltype.ttf",70)
+bg_music = pygame.mixer.Sound(r"Game\audio\music.wav")
 bg_music.play()
 
 # Superficies 
-player_surface = pygame.image.load(r"C:\Users\campo\OneDrive\Escritorio\Game\graphics\Player\player_walk_1.png").convert_alpha()
+player_surface = pygame.image.load(r"Game\graphics\Player\player_walk_1.png").convert_alpha()
 test_surface = pygame.Surface((100,200))
-sky_surface = pygame.image.load(r"C:\Users\campo\OneDrive\Escritorio\Game\graphics\Sky.png").convert()
-ground_surface = pygame.image.load(r"C:\Users\campo\OneDrive\Escritorio\Game\graphics\ground.png").convert()
+sky_surface = pygame.image.load(r"Game\graphics\Sky.png").convert()
+ground_surface = pygame.image.load(r"Game\graphics\ground.png").convert()
 text_surface = text_font.render("Snail Runner", False, "Black")
 game_over_surface = text_font.render("Game Over", False, "Black") 
-snail_surface = pygame.image.load(r"C:\Users\campo\OneDrive\Escritorio\Game\graphics\snail\snail1.png").convert_alpha()
+snail_surface = pygame.image.load(r"Game\graphics\snail\snail1.png").convert_alpha()
 test_surface.fill("White")
 
 # Rectangulos
@@ -40,7 +40,7 @@ while True: # Para que el juego se mantenga inicializado por siempre
             exit()            
 
         if event.type == pygame.MOUSEBUTTONDOWN and player_rect.bottom >= 300:
-            jump_sound = pygame.mixer.Sound(r"C:\Users\campo\OneDrive\Escritorio\Game\audio\jump.mp3")
+            jump_sound = pygame.mixer.Sound(r"Game\audio\jump.mp3")
             jump_sound.play()
             gravity = -24
             
